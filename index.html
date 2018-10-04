@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+	<script src="main.js"></script>
+	<title>Quiz Page!</title>
+
+</head>
+<body>
+	<img id = "coverPic" src="cover.png">
+	<div id = "quiz">
+		<h1>General Information Quiz!</h1>
+	</div>
+	<form name="quiz" action="" id = "q">
+	<p>What is the largest country in the world?</p>
+	<p>
+		<input type="radio" name="question1" value="United States of America"> United States of America<br>
+		<input type="radio" name="question1" value="China"> China<br>
+		<input type="radio" name="question1" id="correct1" value="Russia"> Russia<br>
+		<input type="radio" name="question1" value="Germany"> Germany<br>
+		<p id="q1"></p>
+	</p>
+
+	<hr>
+
+	<p>What is the largest religion in the world?</p>
+	<p>
+		<input type="radio" name="question2" value="Hinduism"> Hinduism<br>
+		<input type="radio" name="question2" id="correct2" value="Christianity"> Christianity<br>
+		<input type="radio" name="question2" value="Islam"> Islam<br>
+		<input type="radio" name="question2" value="Atheist/Agnostic/Non-religious"> Atheist/Agnostic/Non-religious<br>
+		<p id="q2"></p>
+	</p>
+
+	<hr>
+
+	<p>Which country has the largest population?</p>
+	<p>
+		<input type="radio" name="question3" value="India"> India<br>
+		<input type="radio" name="question3" value="United States of America"> United States of America<br>
+		<input type="radio" name="question3" id="correct3" value="China"> China<br>
+		<input type="radio" name="question3" value="Pakistan"> Pakistan<br>
+		<p id="q3"></p>
+	</p>
+
+	<hr>
+
+	<p>What is the most spoken language in the world?</p>
+	<p>
+		<input type="radio" name="question4" value="Spanish"> Spanish<br>
+		<input type="radio" name="question4" value="English"> English<br>
+		<input type="radio" name="question4" id="correct4" value="Chinese"> Chinese<br>
+		<input type="radio" name="question4" value="Arabic"> Arabic<br>
+		<p id="q4"></p>
+	</p>
+
+	<hr>
+
+	<p>What is the largest ocean on Earth?</p>
+	<p>
+		<input type="radio" name="question5" value="Atlantic Ocean"> Atlantic Ocean<br>
+		<input type="radio" name="question5" id="correct5" value="Pacific Ocean"> Pacific Ocean<br>
+		<input type="radio" name="question5" value="Arctic Ocean"> Arctic Ocean<br>
+		<input type="radio" name="question5" value="Indian Ocean"> Indian Ocean<br>
+		<p id="q5">
+			
+		</p>
+	</p>
+
+	<hr>
+
+	<p>What is the largest desert in the world?</p>
+	<p>
+		<input type="radio" name="question6" value="Sahara Desert"> Sahara Desert<br>
+		<input type="radio" name="question6" id="correct6" value="Antartic Desert"> Antartic Desert<br>
+		<input type="radio" name="question6" value="Arctic Desert"> Arctic Desert<br>
+		<input type="radio" name="question6" value="Arabian Desert"> Arabian Desert<br>
+		<p id="q6"></p>
+	</p>
+	<br>
+	<a type = "button" id="button" href="JavaScript:getScore(document.forms['quiz']);">Mark My Answers</a></p>
+	<p >Your Mark Is <input type="text" size="5" name="mark" id = "mark" readonly>
+	</p></form><br>
+	<span class="JavaScript"><br>
+
+
+<script>
+
+// we used jquary to display if an answer is correct or not once the submit button was clicked.
+
+$("#button").on('click', function(){
+	if ($("#correct1").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q1"));
+		$("#q1").css({'color': 'green'})
+	} else
+	  {
+	  	$("<p>The correct answer is Russia.</p>").appendTo($("#q1"));
+		$("#q1").css({'color': 'red'})
+	  }
+});
+
+$("#button").on('click', function(){
+	if ($("#correct2").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q2"));
+		$("#q2").css({'color': 'green'})
+	} else 
+	  {
+		$("<p>The correct answer is Christianity.</p>").appendTo($("#q2"));
+		$("#q2").css({'color': 'red'})
+	  }
+});
+
+$("#button").on('click', function(){
+	if ($("#correct3").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q3"));
+		$("#q3").css({'color': 'green'})
+	} else 
+	  {
+		$("<p>The correct answer is China.</p>").appendTo($("#q3"));
+		$("#q3").css({'color': 'red'})
+	  }
+});
+
+$("#button").on('click', function(){
+	if ($("#correct4").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q4"));
+		$("#q4").css({'color': 'green'})
+	} else 
+	  {
+		$("<p>The correct answer is Chinese.</p>").appendTo($("#q4"));
+		$("#q4").css({'color': 'red'})
+	  }
+});
+
+$("#button").on('click', function(){
+	if ($("#correct5").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q5"));
+		$("#q5").css({'color': 'green'})
+	} else 
+	  {
+		$("<p>The correct answer is Pacific Ocean.</p>").appendTo($("#q5"));
+		$("#q5").css({'color': 'red'})
+	  }
+});
+
+$("#button").on('click', function(){
+	if ($("#correct6").is(":checked")) {
+		$("<p>You are correct!</p>").appendTo($("#q6"));
+		$("#q6").css({'color': 'green'})
+	} else 
+	  {
+		$("<p>The correct answer is Antartic Desert.</p>").appendTo($("#q6"));
+		$("#q6").css({'color': 'red'})
+	  }
+});
+</script>
+</body>
+</html>
